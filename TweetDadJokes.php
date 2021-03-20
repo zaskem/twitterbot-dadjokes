@@ -27,7 +27,7 @@
       $tweetTime = $mention['created_at'];
       $tweetId = $mention['id'];
       $tweetsAvailable[$tweetId] = $tweetTime;
-      $tweetText = $mention['text'];
+      $tweetText = str_replace($token_account, 'bot-account', $mention['text']);
       $replyTo = $mention['user']['screen_name'];
       
       if($debug_bot) {
