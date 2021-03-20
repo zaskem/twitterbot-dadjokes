@@ -48,14 +48,18 @@
         }
       }
     }
-    
+
     // Record the "last" tweet ID for the next tweet mention search
     if (count($tweetsAvailable) > 1) {
       $lastTweetId = array_keys($tweetsAvailable, max($tweetsAvailable));
     } else {
-      $lastTweetId = $tweetsAvailable[0];
+      reset($tweetsAvailable);
+      $lastTweetId = array(key($tweetsAvailable));
     }
-    file_put_contents($lastTweetFile, '<?php return ' . var_export($lastTweetId, true) . '; ?>');
+
+    if (!is_null($lastTweetId)) {
+      file_put_contents($lastTweetFile, '<?php return ' . var_export($lastTweetId, true) . '; ?>');
+    }
   }
 
 
