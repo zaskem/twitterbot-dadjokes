@@ -1,4 +1,4 @@
-# Twitter Dad Jokes Bot
+# Twitter "Dad Jokes" Bot
 A [novelty bot](https://twitter.com/dadjoke_genbot) written in PHP to reply to @-mentions requesting "dad jokes" with a randomly-generated dad joke.
 
 Data is sourced from the [fatherhood.gov](https://www.fatherhood.gov/for-dads/dad-jokes) Dad Joke API.
