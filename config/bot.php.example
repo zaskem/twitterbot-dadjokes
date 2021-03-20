@@ -1,0 +1,32 @@
+<?php
+  /**
+   * General bot settings controlling its behavior
+   */
+  // Bot timezome setting and current date (Y-m-d). This is just in case it's needed in the future.
+  date_default_timezone_set('America/Chicago');
+  $today = date('Y-m-d');
+  $timeAtRun = date('Y-m-d H:i:s');
+  // Debug by printing output of full JSON response
+  $debug_bot = false;
+  // Dad Jokes REST Endpoint
+  $dadjokesEndpoint = 'https://fatherhood.gov/jsonapi/node/dad_jokes';
+  // Dad Jokes cached data file path and expiration (in seconds)
+  $dadJokeDataFile = __DIR__ . '/dadjokes.generated.php';
+  $dadJokeDataExpires = 86400; // 24 hours
+
+  /**
+   * Authorization Keys for Twitter App and bot account
+   */
+  // Twitter User/Bot Token/Secret/Name
+  $token='112233445566';
+  $token_secret='778899AABBCC';
+  $token_account='botname';
+  // Twitter App Token/Secret
+  $consumer_key='FFEEDDCCBBAA';
+  $consumer_secret='998877665544';
+  // Twitter REST Endpoints
+  $twitterMentionsEndpoint = 'https://api.twitter.com/1.1/statuses/mentions_timeline.json';
+  $twitterUpdatesEndpoint = 'https://api.twitter.com/1.1/statuses/update.json';
+  // Last Tweet data file
+  $lastTweetFile = __DIR__ . '/lastTweet.php';
+?>
