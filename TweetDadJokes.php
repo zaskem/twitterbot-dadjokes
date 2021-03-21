@@ -29,6 +29,11 @@
       $tweetsAvailable[$tweetId] = $tweetTime;
       $tweetText = str_replace($token_account, 'bot-account', $mention['text']);
       $replyTo = $mention['user']['screen_name'];
+
+      // Skip this mention (bot mentioned itself) if we're not debugging
+      if (((false === $debug_bot) && ($replyTo == $token_account))) {
+        continue;
+      }
       
       if($debug_bot) {
         printf("%s: %s from %s\n\n", $tweetId, $tweetText, $replyTo);
