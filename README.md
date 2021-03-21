@@ -53,7 +53,7 @@ Have any Twitter account Tweet @ your bot where the text contains the trigger wo
 At the next trigger of `TweetDadJokes.php` (see crontab example above), this mention will be identified by the bot code and an appropriate dad joke will be in the bot's response.
 
 ### A Note of Caution
-Even when testing, it is _highly discouraged_ to have the bot @-mention itself for a dad joke. This will create a loop condition where each trigger of `TweetDadJokes.php` will respond, creating a never-ending thread until the latest responses (or the thread(s)) are deleted. This behavior isn't outright blocked, however, as it can be useful during initial testing. You have been warned.
+Even when testing, it is _highly discouraged_ to have the bot @-mention itself for a dad joke. This will create a loop condition where each trigger of `TweetDadJokes.php` will respond, creating a never-ending thread until the latest responses (or the thread(s)) are deleted. This behavior _is only valid_ when `$debug_bot = true`, as it can be useful during initial testing. You have been warned.
 
 ## Troubleshooting and Tweet Posting
 This bot doesn't have a lot of moving parts, so there's not a lot to troubleshoot. There are three general points of failure:
