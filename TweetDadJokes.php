@@ -198,7 +198,7 @@
     $json = curl_exec($curl_request);
     curl_close($curl_request);
 
-    if (array_key_exists("errors", json_decode($json))) {
+    if (array_key_exists("errors", json_decode($json, true))) {
       return ($debug) ? "Bad Request: $json" : false;
     } else {
       return json_decode($json, true);
@@ -264,7 +264,7 @@
     $json = curl_exec($curl_request);
     curl_close($curl_request);
 
-    if (array_key_exists("errors", json_decode($json))) {
+    if (array_key_exists("errors", json_decode($json, true))) {
       return ($debug) ? "Bad Request: $json" : false;
     } else {
       return ($debug) ? "Good Request: $json" : true;
